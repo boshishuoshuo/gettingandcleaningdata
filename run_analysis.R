@@ -52,6 +52,5 @@ activity_new$subject <- as.factor(activity_new$subject)
 # this solves the questions 5
 activity_new_1 <- activity_new %>% group_by(activity, subject) %>% 
      summarise_each((funs(mean)))
-dim(activity_new_1)
-[1] 180 563
-write.csv(activity_new_1, "bysubandactivity.csv")
+
+write.table(activity_new_1, "bysubandactivity.txt", row.names = FALSE)
